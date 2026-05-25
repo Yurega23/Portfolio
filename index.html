@@ -862,12 +862,20 @@
 
 <script>
   function downloadCV() {
-    var link = document.createElement('a');
-    link.href = 'Resume.pdf';
-    link.download = 'Yurega_Angulakshmi_CV.jpg';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    var win = window.open('', '_blank');
+    win.document.write(`
+      <html><head><title>Yurega_Angulakshmi_CV</title>
+      <style>
+        body { margin: 0; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+        img { max-width: 100%; height: auto; display: block; }
+        @media print { body { margin: 0; } img { width: 100%; } @page { margin: 0; } }
+      </style>
+      <script>window.onload = function(){ window.print(); window.onafterprint = function(){ window.close(); }; }<\/script>
+      </head><body>
+      <img src="data:image/jpeg;base64,YOUR_BASE64_HERE">
+      </body></html>
+    `);
+    win.document.close();
   }
 </script>
 </body>
