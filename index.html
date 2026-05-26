@@ -597,7 +597,7 @@
             <a href="#education">Education</a>
             <a href="#contact">Contact</a>
         </nav>
-        <button onclick="downloadCV()" class="nav-cta"><i class="fa-solid fa-download" style="margin-right:6px;"></i>Download CV</button>
+        <button onclick="download()" class="nav-cta"><i class="fa-solid fa-download" style="margin-right:6px;"></i>Get Resume</button>
     </div>
 </header>
 
@@ -859,16 +859,15 @@
     <p>© 2026 <span>Yurega Angulakshmi</span>. Crafted with passion for web development.</p>
 </footer>
 
-
 <script>
-  function downloadCV() {
+  function download() {
     var link = document.createElement('a');
     link.href = 'Resume.pdf';
-    link.download = 'Yurega_Angulakshmi.jpg';
-    document.body.appendChild(link);
+    link.download = 'Yurega_Angulakshmi_Resume.pdf';
     link.click();
-    document.body.removeChild(link);
-  }
+}
 </script>
+
+
 </body>
 </html>
